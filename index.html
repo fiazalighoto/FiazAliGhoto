@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Probability Predictor — Final Build</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <h1>🎯 Probability Predictor</h1>
+      <p class="subtitle">Advanced random-variable & distribution challenge — 4 teams, 10 rounds</p>
+    </header>
+
+    <!-- Setup -->
+    <section id="setup" class="card">
+      <h2>Class Setup</h2>
+      <div class="names">
+        <input id="nameA" placeholder="Team A name" />
+        <input id="nameB" placeholder="Team B name" />
+        <input id="nameC" placeholder="Team C name" />
+        <input id="nameD" placeholder="Team D name" />
+      </div>
+      <p class="note">Each round: <strong>300 seconds</strong>. Use <strong>Show Hint</strong> for formula-only clues (no answers).</p>
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Start Game ▶</button>
+      </div>
+    </section>
+
+    <!-- Game Area -->
+    <section id="game" class="hidden">
+      <div class="grid">
+        <article class="card questionCard">
+          <div class="qHead">
+            <h3 id="qTitle">Question 1 / 10</h3>
+            <div class="timer" id="timer">⏱ 300s</div>
+          </div>
+
+          <p id="qText" class="qText"></p>
+
+          <button id="showHintBtn" class="hintBtn">💡 Show Hint</button>
+          <div id="hintBox" class="hint hidden"></div>
+
+          <div class="answers">
+            <div class="team">
+              <label id="labelA">Team A</label>
+              <input id="ansA" type="number" step="any" placeholder="enter number" />
+            </div>
+            <div class="team">
+              <label id="labelB">Team B</label>
+              <input id="ansB" type="number" step="any" placeholder="enter number" />
+            </div>
+            <div class="team">
+              <label id="labelC">Team C</label>
+              <input id="ansC" type="number" step="any" placeholder="enter number" />
+            </div>
+            <div class="team">
+              <label id="labelD">Team D</label>
+              <input id="ansD" type="number" step="any" placeholder="enter number" />
+            </div>
+          </div>
+
+          <div class="roundControls">
+            <button id="submitBtn" class="btn primary">Submit Predictions ✅</button>
+            <button id="skipBtn" class="btn ghost">Skip ⏩</button>
+            <button id="nextBtn" class="btn hidden">Next ➡</button>
+          </div>
+
+          <div id="roundResult" class="roundResult hidden"></div>
+        </article>
+
+        <aside class="card leaderboardCard">
+          <h3>🏆 Leaderboard</h3>
+          <ul id="leaderboardList" class="leaderboardList">
+            <li id="scoreA">A: 0</li>
+            <li id="scoreB">B: 0</li>
+            <li id="scoreC">C: 0</li>
+            <li id="scoreD">D: 0</li>
+          </ul>
+          <div class="legend">
+            <p><strong>Scoring:</strong> within ±10% → +10 pts, within ±25% → +5 pts, else 0</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Final -->
+    <section id="final" class="card hidden">
+      <h2 id="finalHeading">🏁 Final Results</h2>
+      <div id="finalScores" class="finalScores"></div>
+      <canvas id="confetti"></canvas>
+      <div style="margin-top:12px">
+        <button id="restartBtn" class="btn primary">Restart Game</button>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <small>Created for classroom demonstration — Random variables & distribution functions.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
